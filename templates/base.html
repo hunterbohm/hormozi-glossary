@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+{% if og_url %}<link rel="canonical" href="{{ og_url }}">{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ cfg.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+{% if og_url %}<meta property="og:url" content="{{ og_url }}">{% endif %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_desc }}">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">{{ cfg.title }}</a>
+  <nav class="site-nav">
+    <a href="index.html">Glossary</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="{{ cfg.repo_url }}" target="_blank" rel="noopener noreferrer">Source</a>
+  </nav>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <p class="disclaimer">
+    <strong>Unofficial &amp; educational.</strong> {{ cfg.title }} is an independent project.
+    Definitions are paraphrased and attributed &mdash; not verbatim quotes &mdash; with links to the
+    original sources (Alex Hormozi&rsquo;s books, <em>The Game</em> podcast, and public talks).
+    Not affiliated with, endorsed by, or sponsored by Alex Hormozi.
+  </p>
+  <p class="foot-links">
+    <a href="{{ cfg.repo_url }}" target="_blank" rel="noopener noreferrer">Source &amp; contributions</a>
+    &middot; <a href="changelog.html">Changelog</a>
+  </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Hormozi long-form guest appearances — verified YouTube URLs (pull via corpus/pull.py --file)
+# Source: corpus map wave (GuestAppearances). 20 verified; Behind the Brand + Section B need YT-ID lookup.
+https://www.youtube.com/watch?v=x3e73Qn6NOo   # Diary of a CEO E235
+https://www.youtube.com/watch?v=Kl-I7sUcAOY   # Diary of a CEO 2025
+https://www.youtube.com/watch?v=Gk8EGWoGnEQ   # Modern Wisdom - honesty
+https://www.youtube.com/watch?v=ky1oHHJ5Ne8   # Modern Wisdom - 41 harsh truths
+https://www.youtube.com/watch?v=-AdkwqkE20M   # Modern Wisdom - 33 brutal truths
+https://www.youtube.com/watch?v=WO5m-roVzjg   # Modern Wisdom - small wins compound
+https://www.youtube.com/watch?v=M4PzOjM5BJQ   # Modern Wisdom - 6 months progress
+https://www.youtube.com/watch?v=sdd4BST87ks   # Deep Dive / Ali Abdaal
+https://www.youtube.com/watch?v=JRPChBZ0Rjo   # Impact Theory / Tom Bilyeu
+https://www.youtube.com/watch?v=gEF67-G9MO0   # On Purpose / Jay Shetty
+https://www.youtube.com/watch?v=9urSNqHrCFM   # Impaulsive / Logan Paul
+https://www.youtube.com/watch?v=5f_UL-z1xgI   # Jack Neel 1
+https://www.youtube.com/watch?v=flBuEEenQRg   # Jack Neel 2
+https://www.youtube.com/watch?v=wKQiy_cA6OA   # Danny Miranda #377
+https://www.youtube.com/watch?v=4KfuQwB5rIs   # Foundr / Nathan Chan
+https://www.youtube.com/watch?v=2IoKsGLpGys   # Iced Coffee Hour 1
+https://www.youtube.com/watch?v=NI22-qg2Hio   # Iced Coffee Hour w/ Leila
+https://www.youtube.com/watch?v=Mof4DT_jzSs   # Iced Coffee Hour - productivity
+https://www.youtube.com/watch?v=QC-6qYuFWgE   # Iced Coffee Hour - AI
+https://www.youtube.com/watch?v=YYKo-8JTOgk   # Noah Kagan Presents

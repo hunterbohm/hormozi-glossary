@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ cfg.title }}</h1>
+  <p class="tagline">{{ cfg.tagline }}</p>
+  <p class="intro">An unofficial, sourced glossary of the words Alex Hormozi defines and redefines &mdash; each entry paraphrased in plain English and linked to where he said it. It grows as more of his content is reviewed; it&rsquo;s not yet every word he&rsquo;s ever said.</p>
+  <p class="meta-line">
+    <span>{{ total }} terms</span> &middot;
+    <span>{{ groups|length }} categories</span> &middot;
+    <span>Last updated {{ last_updated }}</span> &middot;
+    <a href="changelog.html">Changelog</a> &middot;
+    <a href="{{ cfg.repo_url }}" target="_blank" rel="noopener noreferrer">Source</a>
+  </p>
+</section>
+
+<div class="toolbar">
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="Search terms, aliases, definitions&hellip;  ( / )" autocomplete="off" spellcheck="false" aria-label="Search the glossary">
+    <span id="match-count" class="match-count">{{ total }} terms</span>
+  </div>
+  <div class="chips" role="group" aria-label="Filter by category">
+    <button type="button" class="chip is-active" data-cat="all" aria-pressed="true">All <span class="chip-count">{{ total }}</span></button>
+    {% for g in groups %}
+    <button type="button" class="chip" data-cat="{{ g.id }}" aria-pressed="false">{{ g.label }} <span class="chip-count">{{ g.entries|length }}</span></button>
+    {% endfor %}
+  </div>
+</div>
+
+<p id="no-results" class="no-results" hidden>No terms match your search.</p>
+
+<div class="glossary">
+{% for g in groups %}
+  <section class="category" id="cat-{{ g.id }}" data-cat="{{ g.id }}">
+    <h2 class="category-title">{{ g.label }} <span class="category-count">{{ g.entries|length }} terms</span></h2>
+    {% for e in g.entries %}
+    <article class="term" id="{{ e.id }}" data-cat="{{ e.category }}">
+      <div class="term-head">
+        <h3 class="term-name"><a class="anchor" href="#{{ e.id }}" aria-label="Permalink to {{ e.term }}">#</a>{{ e.term }}</h3>
+        <div class="badges">
+          <span class="badge badge-cat">{{ g.label }}</span>
+          <span class="badge badge-conf conf-{{ e.confidence }}" title="Source confidence: {{ e.confidence }}">{{ e.confidence }}</span>
+          {% if e.evidence_status == 'verified' %}<span class="badge badge-ev ev-verified" title="Backed by Hormozi's own spoken words">&#10003; his words</span>{% elif e.evidence_status == 'book' %}<span class="badge badge-ev ev-bookcite" title="Defined in his book (cited, not excerpted)">book</span>{% endif %}
+        </div>
+      </div>
+      {% if e.aliases %}<p class="aliases">also: {{ e.aliases|join(', ') }}</p>{% endif %}
+      <p class="short-def">{{ e.short_def }}</p>
+      <p class="full-def">{{ e.full_def }}</p>
+      {% if e.formula %}<p class="formula" aria-label="Formula">{{ e.formula }}</p>{% endif %}
+      {% if e.components %}
+      <ul class="components">
+        {% for c in e.components %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="callout">
+        <span class="callout-label">The frame &mdash; why it matters</span>
+        <p>{{ e.why_it_matters }}</p>
+      </div>
+      {% if e.evidence %}
+      <div class="evidence">
+        {% for ev in e.evidence %}
+        {% if ev.quote %}
+        <blockquote class="ev-quote">&ldquo;{{ ev.quote }}&rdquo;<cite>&mdash; Alex Hormozi{% if ev.source %}, {% if ev.url %}<a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer">{{ ev.source }}</a>{% else %}{{ ev.source }}{% endif %}{% endif %}</cite></blockquote>
+        {% else %}
+        <p class="ev-book">Defined in <strong>{{ ev.source }}</strong> <span class="ev-note">(cited, not excerpted)</span></p>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="term-foot">
+        <span class="sources">
+          <span class="sources-label">Sources:</span>
+          <ul>
+          {% for s in e.sources %}
+            <li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener noreferrer">{{ s.label }}</a>{% else %}{{ s.label }}{% endif %}</li>
+          {% endfor %}
+          </ul>
+        </span>
+        <span class="first-seen">First seen {{ e.first_seen }}</span>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+{% endfor %}
+</div>
+
+<script type="application/json" id="glossary-data">{{ search_json|safe }}</script>
+<script src="app.js" defer></script>
+{% endblock %}

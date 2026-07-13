@@ -1,0 +1,44 @@
+{
+  "_comment": "Offline fixture for `sweep.py --mock`. Simulates the Rosetta listing + per-page content so the pipeline runs with no network. These slugs are intentionally NOT in data/rosetta-index.md, so they read as NEW. Item 1 & 3 carry pre-baked `definitions` (fixture mode); item 2 omits them to exercise the heuristic extractor over `text`.",
+  "feed": [
+    {
+      "url": "https://rosetta.to/u/alexhormozi/the-leverage-ladder-explained",
+      "title": "The Leverage Ladder Explained",
+      "date": "2026-06-28",
+      "summary": "Alex Hormozi lays out a four-rung ladder of efficiency and argues the real differentiator between people is not hours worked but leverage per hour.",
+      "text": "Alex Hormozi introduces the concept of the Leverage Ladder, a four-level model of efficiency. He defines the Leverage Ladder as the four rungs a person climbs to get more output per hour: doing the work faster, choosing higher-impact work, sequencing that work optimally, and finally delegating it to specialists who do it better than you. Most people compete on effort, but effort is roughly equal across ambitious people, so the ladder is where the real gap opens. He walks through each rung with examples from his own companies.",
+      "definitions": [
+        {
+          "term": "Leverage Ladder",
+          "category": "scaling",
+          "short_def": "A four-rung model of efficiency: do work faster, pick higher-impact work, sequence it optimally, then delegate to specialists.",
+          "full_def": "Hormozi frames productivity as a ladder of leverage rather than a matter of hours. The rungs climb from (1) maximizing raw output on a task, to (2) choosing the highest-impact tasks, to (3) sequencing those tasks optimally, to (4) delegating them to specialists who outperform you. Because effort is roughly equal among ambitious people, the ladder is where the real difference in results is made.",
+          "why_it_matters": "It reframes 'work harder' into 'climb a rung': the fastest gains come from moving up the ladder (better task selection, then delegation), not from adding hours you don't have."
+        }
+      ]
+    },
+    {
+      "url": "https://rosetta.to/u/alexhormozi/the-fat-pitch",
+      "title": "Wait For The Fat Pitch",
+      "date": "2026-06-20",
+      "summary": "Hormozi argues the winners are not the busiest people but the ones with the capacity to swing hard when a rare, obvious opportunity finally shows up.",
+      "text": "Alex Hormozi defines the Fat Pitch as the rare, obviously-good opportunity that comes along a handful of times in a career and deserves a maximal, all-in swing. He argues that opportunity shows up for everyone, but only people who have built spare capacity — time, money, skills, and network — can recognize the fat pitch and actually swing at it. Most people are so busy reacting to every ordinary pitch that they have nothing left when the fat one arrives. The move is to prepare in the boring seasons so you can bet big without hesitation when the odds are lopsided in your favor."
+    },
+    {
+      "url": "https://rosetta.to/u/alexhormozi/ignorance-debt-revisited",
+      "title": "Ignorance Debt, Revisited",
+      "date": "2026-06-15",
+      "summary": "Hormozi returns to ignorance debt with a sharper framing centered on speed of learning.",
+      "text": "Alex Hormozi revisits ignorance debt. He now frames it primarily as an interest rate on not-knowing.",
+      "definitions": [
+        {
+          "term": "Ignorance Debt",
+          "category": "meta",
+          "short_def": "The compounding penalty you pay in lost time and money for every skill you have not yet learned or bought.",
+          "full_def": "In this revisit, Hormozi frames ignorance debt as an interest rate rather than a one-time cost: every day you operate without a proven blueprint, the debt compounds, quietly taxing your growth. The principal is the gap between what you know and what a proven operator knows; the interest is the opportunity you forgo while you close that gap the slow way. You refinance the debt by buying the blueprint outright, either by studying the people who already hold it or by hiring them.",
+          "why_it_matters": "Treating ignorance as compounding debt makes the case for paying to learn fast: the longer you self-teach, the more interest you owe, so buying expertise is often the cheapest option."
+        }
+      ]
+    }
+  ]
+}

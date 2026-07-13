@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero hero-narrow">
+  <h1>Changelog</h1>
+  <p class="tagline">Every addition and revision to the glossary &mdash; newest first.</p>
+  <p class="meta-line"><a href="index.html">&larr; Back to the glossary</a></p>
+</section>
+
+<article class="markdown">
+{{ changelog_html|safe }}
+</article>
+{% endblock %}

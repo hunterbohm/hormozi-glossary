@@ -1,0 +1,16 @@
+# Hormozi Glossary — content-sweep sources.
+#
+# The sweep crawls these sources, diffs what it finds against glossary.yml, and
+# proposes new/changed definitions. Rosetta.to is the primary catalog.
+#
+# `data/rosetta-index.md` (in the repo) is the KNOWN-CATALOG BASELINE: every URL
+# listed there is treated as already-ingested, so the sweep only proposes items
+# published *after* that baseline (plus anything recorded in the state file).
+
+state_file: sweep/.cache/seen.json
+
+sources:
+  - name: rosetta
+    type: rosetta
+    url: https://rosetta.to/u/alexhormozi
+    enabled: true

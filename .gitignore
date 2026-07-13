@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+dist/
+node_modules/
+.wrangler/
+sweep/.cache/
+sweep/proposals/
+# corpus: keep the pull/mine scripts + curated url lists tracked; ignore the bulk generated data
+corpus/transcripts/
+corpus/candidates/
+corpus/manifest.jsonl
+corpus/*.json
+corpus/audit_candidates.txt
+corpus/new_youtube_ids.txt
+corpus/*.log
+corpus/.*
+corpus/audit_shorts/
+corpus/guest_ids.txt
+corpus/guest_new_ids.txt
